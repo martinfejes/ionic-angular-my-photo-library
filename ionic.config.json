@@ -1,0 +1,7 @@
+{
+  "name": "my-photo-library3",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
