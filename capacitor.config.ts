@@ -1,8 +1,8 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'io.ionic.starter',
-  appName: 'my-photo-library3',
+  appId: 'io.fejes.photos',
+  appName: 'my-photo-library',
   webDir: 'www',
   bundledWebRuntime: false
 };
