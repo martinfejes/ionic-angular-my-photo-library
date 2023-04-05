@@ -1,0 +1,6 @@
+<ion-card (click)="handleClick()">
+  <img [src]="imageUrl" alt="Photo {{ photo.id }}">
+  <ion-card-content>
+    <ion-icon [name]="isFavorite ? 'heart' : 'heart-outline'"></ion-icon>
+  </ion-card-content>
+</ion-card>

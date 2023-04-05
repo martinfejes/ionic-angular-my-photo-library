@@ -6,6 +6,7 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { routes } from './app/app.routes';
 import { AppComponent } from './app/app.component';
 import { environment } from './environments/environment';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 
 if (environment.production) {
   enableProdMode();
@@ -15,6 +16,7 @@ bootstrapApplication(AppComponent, {
   providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     importProvidersFrom(IonicModule.forRoot({})),
+    provideHttpClient(withInterceptorsFromDi()),
     provideRouter(routes),
   ],
 });

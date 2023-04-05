@@ -4,7 +4,7 @@
   "compilerOptions": {
     "baseUrl": "src",
     "paths": {
-      "@components/*": ["app/components/*"],
+      "@components": ["app/components/index"],
       "@models/*": ["app/models/*"],
       "@pages/*": ["app/pages/*"],
       "@services/*": ["app/services/*"],
