@@ -1,0 +1,36 @@
+name: Android CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2-beta
+        with:
+          node-version: '14.x'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build the project
+        run: npm run build
+
+      - name: Install Android SDK
+        uses: android-actions/setup-android@v2
+        with:
+          sdk-version: '30'
+
+      - name: Build and run on emulator
+        run: npx cap sync android && cd android && ./gradlew assembleDebug && ./gradlew connectedDebugAndroidTest
